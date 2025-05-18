@@ -102,19 +102,25 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: var(--primary-color);
-    flex-direction: column;
-    align-items: center;
-    display: none;
-  }
   nav ul.active {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* smaller gap between links */
+    padding: 10px 0; /* smaller padding */
+    font-size: 0.9rem; /* smaller font */
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(6px);
+    animation: slideDown 0.3s ease-out;
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
+
+  nav ul {
+    top: 100%; /* aligns it directly below the sticky bar without space */
+  }
+}
+
   .hamburger {
     display: flex;
   }
